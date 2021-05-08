@@ -1,0 +1,21 @@
+it >'G' and <'m'
+array[3]=V
+v0  = 1
+aVg
+a 1
+z 1
+V 1
+z 1
+2 1
+z 1
+9 1
+A 1
+a 1
+2 1
+2 1
+aaVz2z9Aa2
+0x61 0x61 0x56 0x7a 0x32 0x7a 0x39 0x41 0x61 0x32
+ecx = v0
+edx = v1 ***
+
+45 minutes

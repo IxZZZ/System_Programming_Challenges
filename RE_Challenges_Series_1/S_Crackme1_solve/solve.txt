@@ -1,0 +1,3 @@
+copy ot clipboard : IIIIIIIIIIIIIII
+creat afile reg.key with content pcba7gba
+2hours

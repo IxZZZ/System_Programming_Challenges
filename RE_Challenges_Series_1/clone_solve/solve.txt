@@ -1,0 +1,9 @@
+pass_len = 8
+user_len > 5
+password character in [0,9] -> 0 -> 9
+ or [A-Z] 10 -> 35
+
+abcde
+BE14405E
+
+5 hours

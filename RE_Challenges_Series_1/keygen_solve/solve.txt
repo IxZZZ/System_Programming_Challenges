@@ -1,0 +1,5 @@
+test 		FF00000FF0000FF0000
+password 	bbbbbbbbbbbb
+
+username = aaaabbbbcccc
+password = aa-DA8E-95DF
