@@ -192,6 +192,8 @@ print(hex(C8))
 ####### Phần 2:
 
 # đây là đoạn code dịch ngược đoạn IF kiểm tra cuối cùng, từ  dword_4030C8 tính ra byte_4030C8
+# đoạn IF cuối ta thấy mỗi byte của kết quả sẽ là tổng của (b_lẻ + 16*b_chẳn) ^ (số nguyên) (+-) (số nguyên)
+# sau đây ta lấy ra từng byte của dword_4030C8 để tính ngược ra tổng (b_lẻ+16*_chẳn) lần lượt lưu vào b3,b2,b1,b0
 
 
 b3 = (((C8 >> 24) & 0xff)-52) ^ 0x12
@@ -201,13 +203,45 @@ b0 = ((C8 & 0xff)+17) ^ 0xCD
 
 
 print(b0, b1, b2, b3)
+
+# sau đây là đoạn xác định b_chẳn và b_lẻ
+"""
+        while ( 1 )
+        {
+          v14 = *v13;
+          if ( !*v13 )
+            break;
+          if ( (unsigned __int8)v14 < '0' )
+            return 0;
+          if ( (unsigned __int8)v14 > '9' )
+          {
+            if ( (unsigned __int8)v14 < 65u || (unsigned __int8)v14 > 70u )
+              return 0;
+            byte_4030B8[v12] = v14 - 55;
+            ++v13;
+            ++v12;
+          }
+          else
+          {
+            byte_4030B8[v12] = v14 - '0';
+            ++v13;
+            ++v12;
+          }
+        }
+"""
+
+từ đoạn code này ta có thể thấy là giá trị của password sẽ nằm trong khoản từ 0->15 decimal
+vậy nên ta chọn b_chẳn tương ứng là [11,1,4,5] tại vị trí [0,2,4,6] để tính ra b_lẻ ở vị trí [1,3,5,7] như ở dưới 
 print(b0-16*5)
 print(b1-16*4)
 print(b2-16*1)
 print(b3-16*11)
+
+# arr chứa cái phần tử của byte_4030B8
 arr = [11,b3-16*11,1,b2-16*1,4,b1-16*4,5,b0-16*5]
 
-# arr chứa cái phần tử của byte_4030C8
+
+
 # tiếp theo là inverse đoạn code trên lệnh IF để lấy Serial 
 passw = ""
 for i in arr:
@@ -220,3 +254,8 @@ print("Serial: ",passw)
 
 ## Chạy đoạn code python ta nhận được  `Serial` tương ứng với `username` = `abcde` là
 # Serial:  BE14405E
+
+nhập serial và password tương ứng:
+![image](clonefinal.png)
+
+Done!!!
