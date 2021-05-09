@@ -184,8 +184,8 @@ v11 = swap32(v10)
 
 v11 += 1
 C8 = v11
-######## Phần 1
 print(hex(C8))
+
 
 
 
@@ -193,10 +193,13 @@ print(hex(C8))
 
 # đây là đoạn code dịch ngược đoạn IF kiểm tra cuối cùng, từ  dword_4030C8 tính ra byte_4030C8
 
+
 b3 = (((C8 >> 24) & 0xff)-52) ^ 0x12
 b2 = (((C8 >> 16) & 0xff)-120) ^ 0x56
 b1 = (((C8 >> 8) & 0xff)+85) ^ 0x90
 b0 = ((C8 & 0xff)+17) ^ 0xCD
+
+
 print(b0, b1, b2, b3)
 print(b0-16*5)
 print(b1-16*4)
@@ -206,7 +209,6 @@ arr = [11,b3-16*11,1,b2-16*1,4,b1-16*4,5,b0-16*5]
 
 # arr chứa cái phần tử của byte_4030C8
 # tiếp theo là inverse đoạn code trên lệnh IF để lấy Serial 
-
 passw = ""
 for i in arr:
     if i >= 0 and i <= 9:
