@@ -17,7 +17,7 @@ Ta đoán bài này sẽ yêu cầu tìm `serial` và `username` hợp lệ
 clone.exe: PE32 executable (GUI) Intel 80386, for MS Windows
 ```
 
-Vậy file này là fiel 32bit
+Vậy file này là file 32bit
 
 Tiến hành reverse file bằng IDA pro 32bit sau đó tiến hành phân tích 
 
