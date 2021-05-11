@@ -100,7 +100,7 @@ vị trí `v4` + `5` sẽ là vị trí của ký tự cuối cùng của chuỗ
 
 Vậy `byte_402073[v4]` sẽ chính là `user_pass[v4-1]`
 
-dòng kiểm tra sẽ là lấy từng phần tử đầu đến cuối của `username` + `5` (welcome[v4 + 5] + 5) so sánh với phần từ cuối đến đầu của `password` nhập vào nếu khác sẽ in ra sai 
+dòng kiểm tra sẽ là lấy từng phần tử đầu đến cuối của `username` + `5` (`welcome[v4 + 5] + 5`) so sánh với phần từ cuối đến đầu của `password` nhập vào nếu khác sẽ in ra sai 
 
 để đơn giản ta nhập `username` là `Hello`
 giả sử `password` chỉ có `3` phần tử thì sẽ được tạo ra từ `Hel` của `username`

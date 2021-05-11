@@ -5,7 +5,7 @@ File : run.exe
 
 Chạy thử file :
 
-Chú ý: vì mình chạy file này trên Windows Subsystem Linux nên file chạy bình thường, bản chất file này là file linux mặc dù extension là `.exe`
+Chú ý: vì mình chạy file này trên Windows Subsystem Linux nên file chạy bình thường, bản chất file này là file linux mặc dù extension là `.exe`. tricky :) 
 
 ```bash
 └─$./ run.exe
@@ -13,11 +13,13 @@ Chú ý: vì mình chạy file này trên Windows Subsystem Linux nên file ch�
 └─$./ run.exe hello
         Wrong !
 ```
+
 Lần đầu tiên ta chạy file thì thấy lỗi `Segmentation fault` nên ta thử chạy file với tham số truyền vào
 
 Vậy ở challenges này sẽ kiểm tra tham số truyền vào trực tiếp khi chạy chương trình
 
 Nếu nhập sai sẽ in ra `wrong`
+
 
 ## Solution
 

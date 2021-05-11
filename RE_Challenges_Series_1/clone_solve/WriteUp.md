@@ -40,9 +40,11 @@ Sau một hồi debug thì ta thấy chương trình sẽ nhảy vào kiểm tra
 
 Ở Câu lệnh IF đầu tiên 
 ta biết ngay là độ dài của `username` phải lớn hơn `5` và độ dài của `serial` phải đúng bằng 8
+
 ### Chú ý: biến `username` và `serial` đã được mình tự đổi tên lại sau khi đọc code và debug chứ không phải IDA phát hiện ra ngay từ đầu
 
 Đoạn code tiếp theo được chia làm hai phần chính
+
  ## Phần 1: lấy các giá trị từ phần tử thứ 4 của `username` sau đó thực hiện tính toán và lưu vào biến `dword_4030C8`
  ```c
          v4 = &username[4];
@@ -76,7 +78,7 @@ ta biết ngay là độ dài của `username` phải lớn hơn `5` và độ d
         dword_4030C8 = _byteswap_ulong(v11);
  ```
 
-## Phần 2: lấy các giá trị của `serial`sau đó thực hiện tính toán và lưu vào biên `byte_4030B8`
+## Phần 2: lấy các giá trị của `serial` sau đó thực hiện tính toán và lưu vào biên `byte_4030B8`
 ```c
  v12 = 0;
         v13 = serial;

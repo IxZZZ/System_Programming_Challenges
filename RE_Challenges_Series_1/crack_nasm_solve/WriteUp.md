@@ -3,8 +3,8 @@
 # Task 
 File: CrackMe_ASM
 
-Chạy thử file (chạy trên linux└─$ file CrackMe_ASM
-CrackMe_ASM: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), statically linked, not stripped) :
+Chạy thử file (chạy trên linux)
+
 ```bash
 └─$ ./CrackMe_ASM
 Flag : hello
@@ -16,7 +16,7 @@ you are wrong , try again !
 Flag :
 ```
 
-Chương trình yêu cầu chúng ta nhập vào `Flag` nếu sai in ra chuỗi `you are wrong, try agian! !`
+Chương trình yêu cầu chúng ta nhập vào `Flag` nếu sai in ra chuỗi `you are wrong, try again!!`
 
 ## Solution
 

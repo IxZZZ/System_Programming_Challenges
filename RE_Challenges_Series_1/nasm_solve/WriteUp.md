@@ -10,7 +10,7 @@ Chạy thử file:
 Enter your password: hello
 Wrong!
 ```
-Challenge này cũng yêu cầu chúng ta tim đúng `password`
+Challenge này cũng yêu cầu chúng ta tìm đúng `password`
 
 ## Solution
 
