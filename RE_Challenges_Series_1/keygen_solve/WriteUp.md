@@ -94,8 +94,20 @@ int sub_4010F9()
 
 ### chú ý: các tên hàm đã được mình phân tích và sửa lại cho dễ hiểu source chứ mặc định IDA load lên sẽ ko có những cái tên dễ đọc như vậy.
 
-Để chương trình in ra chuỗi mà chúng ta muốn thì trước tiên ta phải làm cho chương trình gọi được hàm `func_check_and_print_correct()`. Tuy nhiên trước khi gọi hàm này thì chương trình phải gọi hàm `sub_4010C0()` và hàm `func_preprocess_before_check()` vì hàm `sub_4010C0()` được gọi tuy nhiên không ảnh hưởng đến flow của chương trình nên mình không tiến hành đổi tên hàm này.
-Còn hàm `func_preprocess_before_check()` có ảnh hưởng đến flow của chương trình nên mình đã đổi tên cho dễ phân biệt 
+Để chương trình in ra chuỗi mà chúng ta muốn thì trước tiên ta phải làm cho chương trình gọi được hàm `func_check_and_print_correct()`. Tuy nhiên trước khi gọi hàm này thì chương trình phải gọi hàm `sub_4010C0()` và hàm `func_preprocess_before_check()`.
+
+Ta tiến hành phân tích lần lượt hai hàm này:
+
+Đầu tiên ta phân tích hàm `sub_4010C0()`
+
+Ta thấy sau khi hàm `sub_4010C0()` được gọi thì hàm sẽ gọi câu lệnh `if(v0==3)` đọc code assembly ta thấy `v0` chính là thanh ghi `ecx`. Vậy trong hàm `sub_4010C0()` chắc chắn sẽ có ảnh hưởng đến `ecx`
+
+![image](additional.png)
+
+Sau khi phân tích và debug thì ta thấy `ecx` chính là biến lặp của hàm này, trong mỗi lần lặp sẽ lấy 4 bytes từ `password` được lưu trong thanh ghi `esi` sau đó lần lượt `test` với `0xff` và `0xff000000` nếu một trong hai điều kiện `test` bằng `0` (hay byte đầu tiên hoặc byte cuối trong 4 bytes này bằng `0`) thì sẽ thoát vòng lặp. Nếu ngược lại thì `cl` (8 bit của `ecx`) sẽ tăng lên 1 và thực hiện vòng lặp tiếp theo
+
+Như vậy để `ecx` = `3` thì phải qua 3 vòng lặp cho và cả 3 vòng lặp đều thỏa điều kiện như vậy mỗi 4 byte thì byte đầu và byte cuối khác `0`. Vậy ta biết được `password` sẽ có độ dài `12` ký tự để khi đọc mỗi 4 bytes sẽ thỏa điều kiện mà đọc `3` lần 4 bytes sẽ là `12 bytes` (độ dài)
+
 
 
 Trước khi đi vào hàm `func_preprocess_before_check()`
