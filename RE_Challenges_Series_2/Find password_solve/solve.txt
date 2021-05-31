@@ -1,3 +1,0 @@
-buf1 006CFED8
-buf2 006CFEC0
-djejie
