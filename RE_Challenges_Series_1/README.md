@@ -1,5 +1,5 @@
 # System_Programming_Challenges
-| time   | speedrun                    | exploit                         |
+| time   | Challenges                    | exploit                         |
 | ------ | --------------------------- | ------------------------------- |
 | 5m     | [nasm](nasm_solve/WriteUp.md) | rev                             |
 | 5m     | [crack_nasm](crack_nasm_solve/WriteUp.md) | rev                             |
